@@ -1,6 +1,9 @@
 -module(hello).
--export([incr/1,output/0,loop/1]).
+-export([start/0,incr/1,output/0,loop/1]).
 -vsn(1.8).
+
+start() ->
+	Pid = spawn(?MODULE,output,[]).
 
 incr(N) ->
 	N + 1.
