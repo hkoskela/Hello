@@ -1,6 +1,6 @@
 -module(hello).
 -export([start/0,incr/1,output/0,loop/1]).
--vsn(2.0.1).
+-vsn(2.01).
 
 start() ->
 	spawn(?MODULE,output,[]).
