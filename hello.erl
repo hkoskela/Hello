@@ -1,6 +1,6 @@
 -module(hello).
 -export([start/0,incr/1,init/0,loop/1,update/0]).
--vsn(2.09).
+-vsn(2.10).
 
 start() ->
 	spawn(?MODULE,init,[]).
@@ -21,7 +21,7 @@ loop(N) ->
 	V = ?MODULE:module_info(attributes),
 	New = ?MODULE:incr(N),
 	T = calendar:now_to_local_time(now()),
-    Message = "Kissa",
+    Message = "1",
 	io:format("~p ~p Ajettu ~p kertaa: ~p ~n", [T,V,New,Message]),
 	timer:sleep(5000),
     ?MODULE:loop(New).
