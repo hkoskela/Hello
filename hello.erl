@@ -20,7 +20,7 @@ init() ->
     
 loop(N) ->	
 	?MODULE:update(),
-	[{vns,[V]}] = ?MODULE:module_info(attributes),
+	{_,{_,[V]}}= beam_lib:version(?MODULE),
 	New = ?MODULE:incr(N),
 	{{_},{H,Min,S}} = calendar:now_to_local_time(now()),
     Message = "Hoho",
