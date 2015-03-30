@@ -21,7 +21,7 @@ loop(N) ->
 	{_,{_,[V]}}= beam_lib:version(hello),
 	New = ?MODULE:incr(N),
 	T = calendar:now_to_local_time(now()),
-    Message = "Viesti",
+    Message = "1",
 	io:format("~p Versio: ~p Ajettu ~p kertaa ~p ~n", [T,V,New,Message]),
 	timer:sleep(5000),
     ?MODULE:loop(New).
