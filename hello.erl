@@ -1,6 +1,6 @@
 -module(hello).
 -export([start/0,incr/1,init/0,loop/1,update/0]).
--vsn(2.46).
+-vsn(2.48).
 
 start() ->
 	spawn(?MODULE,init,[]).
@@ -18,7 +18,7 @@ init() ->
     
 loop(N) ->	
 	?MODULE:update(),
-	{_,{_,[V]}}= beam_lib:version(hello),
+	{ok,{hello,[V]}} = beam_lib:version(hello),
 	New = ?MODULE:incr(N),
 	%%T = calendar:now_to_local_time(now()),
     T = time(),
