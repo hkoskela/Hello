@@ -1,6 +1,6 @@
 -module(hello).
 -export([start/0,incr/1,init/0,loop/1,update/0]).
--vsn(2.63).
+-vsn(2.64).
 
 start() ->
 	spawn(?MODULE,init,[]).
@@ -18,10 +18,10 @@ init() ->
     
 loop(N) ->	
 	?MODULE:update(),
-	{ok,{hello,[V]}} = beam_lib:version(hello),
 	New = ?MODULE:incr(N),
 	{H,M,S} = time(),
-	Message = "5",
+	Message = "testi",
+	{ok,{hello,[V]}} = beam_lib:version(hello),
 	io:format("(~p:~p:~p) Versio: ~p Ajettu ~p kertaa ~p ~n", [H,M,S,V,New,Message]),
 	timer:sleep(5000),
     ?MODULE:loop(New).
