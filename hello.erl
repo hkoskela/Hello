@@ -20,7 +20,7 @@ loop(N) ->
 	?MODULE:update(),
 	New = ?MODULE:incr(N),
 	{H,M,S} = time(),
-	Message = "15",
+	Message = "test",
 	{ok,{hello,[V]}} = beam_lib:version(hello),
 	io:format("(~p:~p:~p) Versio: ~p Ajettu ~p kertaa ~p ~n", [H,M,S,V,New,Message]),
 	timer:sleep(5000),
